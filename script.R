@@ -32,11 +32,10 @@ v = sort(rowSums(m),decreasing=TRUE)
 
 d = data.frame(word = names(v),freq=v)
 head(d, 50)
-
-set.seed(1234)
+e <- head(d,50)
 
 wordcloud(words = d$word, freq = d$freq, min.freq = 28,
           max.words=200, random.order = T, rot.per=0.5, 
           colors = brewer.pal(8, "Dark2"))
 
-write.csv2(d,"palavras_mais_usadas.csv")
+write.csv2(e,"50_palavras_mais_usadas.csv")
